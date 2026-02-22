@@ -51,6 +51,8 @@ function tick() {
   remainingSeconds--;
   updateDisplay();
   if (remainingSeconds <= 0) {
+    clearInterval(intervalId);
+    intervalId = null;
     switchPhase();
     if (isRunning) {
       intervalId = setInterval(tick, 1000);
